@@ -4,7 +4,7 @@ var lottoNumbers: Set<Int> = Set<Int>()
 var winningNumber: [Int] = []
 var myLottoNumbers: [Int] = [1, 2, 3, 4, 5, 6]
 
-func generateOfRandomNumbers() {
+func generateRandomNumbers() {
     while lottoNumbers.count < 6 {
         let randomNumber: Int = Int.random(in: 1 ... 45)
         lottoNumbers.insert(randomNumber)
@@ -36,7 +36,7 @@ func resetLottoResult() {
 func drawLottoNumbers() {
     resetLottoResult()
     
-    generateOfRandomNumbers()
+    generateRandomNumbers()
     
     for lottoNumber in lottoNumbers {
         if myLottoNumbers.contains(lottoNumber) {
@@ -45,7 +45,12 @@ func drawLottoNumbers() {
     }
     
     printWinningMesage()
+    
+    currentRound += 1
+    
+    saveLottoNumbers()
 }
+// 로또 번호를 추첨하는 함수
     
     
     
