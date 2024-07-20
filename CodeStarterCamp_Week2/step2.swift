@@ -46,8 +46,6 @@ func drawLottoNumbers() {
     
     printWinningMesage()
     
-    currentRound += 1
-    
     saveLottoNumbers()
 }
 // 로또 번호를 추첨하는 함수
