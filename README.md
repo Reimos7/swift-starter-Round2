@@ -78,5 +78,5 @@ func checkLotto(myLotto: [Int], lotto: [Int]) {
         print("아쉽지만 겹치는 번호가 없습니다.")
     }
 }
-
 ```
+
