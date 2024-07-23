@@ -7,19 +7,15 @@
 
 import Foundation
 
-//enum Lotto{
-//    case myLotto([Int])
-//    case lotto([Int])
-//}
 
-func buyLotto() {
+func compareLotto() {
     let myLottoNumbers: [Int] = [1, 2, 3, 4, 5, 6]
-    let lottoNumbers: [Int] = generateLotto()
+    let lottoNumbers: [Int] = generateLottoNumbers()
     checkLotto(myLotto: myLottoNumbers, lotto: lottoNumbers)
 }
 
 
-func generateLotto() -> [Int] {
+func generateLottoNumbers() -> [Int] {
     var lottoNumber: [Int] = []
     
     while lottoNumber.count < 6 {

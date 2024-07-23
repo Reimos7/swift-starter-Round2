@@ -26,25 +26,25 @@
 <img width="297" alt="image" src="https://github.com/user-attachments/assets/2f39afc1-9132-4a38-9cbb-2c12a2f8a6d9">
 
 ## 기능구현
-### buyLotto 함수
+### compareLotto 함수
 - 나의 로또 번호를 입력하며 로또번호를 생성하자마자 변수에 저장
 - 나의 로또 번호와 로또번호를 체크하는 checkLotto()함수 실행
 ```swift
-func buyLotto() {
+func compareLotto() {
     let myLottoNumbers: [Int] = [1, 2, 3, 4, 5, 6]
-    let lottoNumbers: [Int] = generateLotto()
+    let lottoNumbers: [Int] = generateLottoNumbers()
     checkLotto(myLotto: myLottoNumbers, lotto: lottoNumbers)
 }
 ```
 
-### generateLotto 함수
+### generateLottoNumbers 함수
 - 로또번호를 전달하기 위해 임시로 변수 지정
 - 로또번호는 6개 임으로 while문으로 6개인지 체크
 - Int.random으로 1~45까지 숫자 출력후 number에 저장
 - number가 lottoNumber에 있는지 파악후 겹칠 경우 반복문 재실행 없을 경우 번호 추가
 - 6개 추가완료 시 전달
 ```swift
-func generateLotto() -> [Int] {
+func generateLottoNumbers() -> [Int] {
     var lottoNumber: [Int] = []
     
     while lottoNumber.count < 6 {
@@ -80,4 +80,3 @@ func checkLotto(myLotto: [Int], lotto: [Int]) {
 }
 
 ```
-
