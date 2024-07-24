@@ -5,18 +5,20 @@
 순서도 및 설명입니다.
 
 ## 순서도
-<img width="533" alt="스크린샷 2024-07-13 오전 3 41 59" src="https://github.com/user-attachments/assets/62a5a5c6-4b7c-4ad8-b32f-d11e0a9f486f">
+<img width="553" alt="image" src="https://github.com/user-attachments/assets/c80901e8-a27e-4c31-aa49-71476b1146bb">
 
 ## 순서도 설명
-### lotto: Set<Int> 선언
-- 로또 번호의 중복을 방지하기 위해서 Set 타입으로 정의하였습니다.
+### 1~45에서 랜덤 숫자 추출 및 Set에 저장
+- Int.random을 통해 랜덤 숫자 추출
+- 로또 번호의 중복을 방지하기 위해서 Set 타입으로 로또 번호 저장
 
-### while lotto.count < 6
-- 6개의 랜덤함 숫자를 추가시키기 위하여 lotto의 갯수를 6개로 제한하는 조건으로 while문을 실행하였습니다.
-- while문을 실행할 시 특정 범위 내에 랜덤 숫자를 뽑는 Int.random(범위)를 활용하여 1에서 45까지 랜덤한 숫자 추출 후 lotto에 insert로 추가
+### Set의 count가 6개 인가?
+- 6개의 랜덤함 숫자를 만들기 위하여  갯수를 6개로 제한하는 조건으로 while문을 실행
+- Set 타입으로 저장하기에 번호 추출이 중복일 경우 다시 번호를 추출하기 위함
 
-### "\(lotto)" 출력
+### 난수 6개 출력
 - 반복문을 통해 얻은 랜덤 숫자 6개 출력
+
 
 2. step 2 
 “Round2 두번째 스텝 "내 번호와 맞추어보기!” \
@@ -79,4 +81,3 @@ func checkLotto(myLotto: [Int], lotto: [Int]) {
     }
 }
 ```
-
