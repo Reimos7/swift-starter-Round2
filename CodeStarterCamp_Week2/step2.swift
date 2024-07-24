@@ -14,7 +14,6 @@ func compareLotto() {
     checkLotto(myLotto: myLottoNumbers, lotto: lottoNumbers)
 }
 
-
 func generateLottoNumbers() -> [Int] {
     var lottoNumber: [Int] = []
     
