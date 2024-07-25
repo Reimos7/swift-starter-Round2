@@ -1,0 +1,135 @@
+<mxfile host="app.diagrams.net" modified="2024-07-19T13:54:58.069Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Whale/3.26.244.21 Safari/537.36" etag="ZKNr2nMX57Q38LOC7p4G" version="24.7.1" type="device">
+  <diagram name="페이지-1" id="3JHK6Us2elX0GwnQiGDP">
+    <mxGraphModel dx="1216" dy="1746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="iVNjcs9XqOBAV89Kyp6e-1" value="시작" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="235" y="10" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-1" value="1~45에서 랜덤 숫자 추출&lt;div&gt;및 lotto에 저장&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="165" y="360" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-3" value="lotto의 count가&lt;div&gt;6개 인가?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="560" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.446;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="BYTtfEjSZOPfgn-c-NL7-3" target="BYTtfEjSZOPfgn-c-NL7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="540" as="sourcePoint" />
+            <mxPoint x="340" y="490" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="100" y="620" />
+              <mxPoint x="100" y="418" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-6" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BYTtfEjSZOPfgn-c-NL7-5">
+          <mxGeometry x="-0.5572" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BYTtfEjSZOPfgn-c-NL7-1" target="BYTtfEjSZOPfgn-c-NL7-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="710" as="sourcePoint" />
+            <mxPoint x="340" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="294.76" y="90" as="sourcePoint" />
+            <mxPoint x="294.76" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="294.57" y="290" as="sourcePoint" />
+            <mxPoint x="294.57" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="294.74" y="680" as="sourcePoint" />
+            <mxPoint x="294.74" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-13" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BYTtfEjSZOPfgn-c-NL7-12">
+          <mxGeometry x="-0.3714" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-14" value="myLottoNumbers와 lottoNumbers&amp;nbsp;&lt;div&gt;비교 및 결과값 배열에 저장&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="165" y="750" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-15" value="myLottoNumber 입력&lt;div&gt;[1, 2, 3, 4, 5, 6]&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="165" y="160" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-16" value="결과값이 비었는가" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="950" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="234.09" y="1010" as="sourcePoint" />
+            <mxPoint x="150" y="1110" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-18" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BYTtfEjSZOPfgn-c-NL7-17">
+          <mxGeometry x="-0.3714" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-23" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="355" y="1010" as="sourcePoint" />
+            <mxPoint x="450.0000000000001" y="1110" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="1010" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-24" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BYTtfEjSZOPfgn-c-NL7-23">
+          <mxGeometry x="-0.3714" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-25" value="&quot;아쉽지만 겹치는 번호가 없습니다.&quot;&lt;div&gt;출력&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1110" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-26" value="결과값을 String으로 변환 후 대괄호 삭제&lt;div&gt;&quot;축하합니다! 겹치는 번호는 2, 3 입니다!&quot;&lt;/div&gt;&lt;div&gt;출력&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1110" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="294.52" y="880" as="sourcePoint" />
+            <mxPoint x="294.52" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-30" value="종료" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="1360" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-31" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BYTtfEjSZOPfgn-c-NL7-26" target="BYTtfEjSZOPfgn-c-NL7-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="150" y="1260" as="sourcePoint" />
+            <mxPoint x="280" y="1350" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="1300" />
+              <mxPoint x="295" y="1300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYTtfEjSZOPfgn-c-NL7-33" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BYTtfEjSZOPfgn-c-NL7-25" target="BYTtfEjSZOPfgn-c-NL7-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="1250" as="sourcePoint" />
+            <mxPoint x="525" y="1370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="1300" />
+              <mxPoint x="295" y="1300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

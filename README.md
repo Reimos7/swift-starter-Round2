@@ -19,3 +19,65 @@
 ### 난수 6개 출력
 - 반복문을 통해 얻은 랜덤 숫자 6개 출력
 
+
+2. step 2 
+“Round2 두번째 스텝 "내 번호와 맞추어보기!” \
+기능구현 설명과 함께 PR드립니다!
+
+## 순서도
+<img width="297" alt="image" src="https://github.com/user-attachments/assets/2f39afc1-9132-4a38-9cbb-2c12a2f8a6d9">
+
+## 기능구현
+### compareLotto 함수
+- 나의 로또 번호를 입력하며 로또번호를 생성하자마자 변수에 저장
+- 나의 로또 번호와 로또번호를 체크하는 checkLotto()함수 실행
+```swift
+func compareLotto() {
+    let myLottoNumbers: [Int] = [1, 2, 3, 4, 5, 6]
+    let lottoNumbers: [Int] = generateLottoNumbers()
+    checkLotto(myLotto: myLottoNumbers, lotto: lottoNumbers)
+}
+```
+
+### generateLottoNumbers 함수
+- 로또번호를 전달하기 위해 임시로 변수 지정
+- 로또번호는 6개 임으로 while문으로 6개인지 체크
+- Int.random으로 1~45까지 숫자 출력후 number에 저장
+- number가 lottoNumber에 있는지 파악후 겹칠 경우 반복문 재실행 없을 경우 번호 추가
+- 6개 추가완료 시 전달
+```swift
+func generateLottoNumbers() -> [Int] {
+    var lottoNumber: [Int] = []
+    
+    while lottoNumber.count < 6 {
+        let number = Int.random(in: 1...45)
+        
+        if !lottoNumber.contains(number) {
+            lottoNumber.append(number)
+        }
+    }
+    return lottoNumber
+}
+
+```
+### checkLotto 함수
+- 나의 로또를 forEach를 통해서 입력되어있는 값 하나하나 생성된 로또와 비교
+- 비교 후 result에 저장후 비지않은경우는 겹치는 번호가 있기에 result를 문자열로 변경후 출력양식 정의
+- 비었을 경우 겹치는 번호가 없기에 "아쉽지만 겹치는 번호가 없습니다." 출력
+```swift
+func checkLotto(myLotto: [Int], lotto: [Int]) {
+    var result: [Int] = []
+    myLotto.forEach { number in
+        if lotto.contains(number) {
+            result.append(number)
+        }
+    }
+    
+    if !result.isEmpty {
+        let resultString = result.map { String($0) }.joined(separator: ", ")
+        print("축하합니다! 겹치는 번호는 \(resultString) 입니다!")
+    } else {
+        print("아쉽지만 겹치는 번호가 없습니다.")
+    }
+}
+```
