@@ -82,75 +82,70 @@ func checkLotto(myLotto: [Int], lotto: [Int]) {
 
 3. step3
 “Round2 마지막 스텝 "로또 당첨 번호를 회차별로 저장하고, 확인하자!” \
-기능구현 설명입니다.!
+기능구현 설명입니다.
 
 ## 순서도
-<img width="205" alt="image" src="https://github.com/user-attachments/assets/ea575f5c-29b3-4676-b273-a09db36b114d">
+<img width="192" alt="image" src="https://github.com/user-attachments/assets/74435a00-703e-41bb-86e3-17e0d3d305dd">
 
 ## 기능구현
-### lottoDict 함수
-- 검색할 회차 번호를 readLine으로 입력을 받음
-- 총 5개의 로또 번호를 위해 while문으로 로또번호 생성 함수 generateLotto() 실행
-- 생성 즉시 로또번호 저장 함수 storeLotto()실행
-- 입력값이 있을경우 Int화 하여 로또번호 확인 함수 checkLotto() 실행
+### lottoOutput 함수
+- 총 5개의 로또 번호를 위해 while문으로 로또번호 생성 함수 generateLottoNumbers() 실행
+- 생성 즉시 로또번호 저장 함수 storeLottoToDictionary()실행
+- 저장된 로또번호를 출력하는 checkLottoNumbers()실행
 ```swift
-func lottoDict() {
-    print("로또 번호 생성기")
-    print("회차 검색: ", terminator: "")
-    let roundInput = readLine()
-    var roundNum: Int = 1
-    var lottoDict: [String: [Int]] = [:]
+func lottoOutput() {
+    var roundNumber: Int = 1
+    var lottoDict: [Int: [Int]] = [:]
 
-    while roundNum <= 5 {
-        let lottoNumbers = generateLotto()
-        storeLotto(roundNum: roundNum, lotto: lottoNumbers, lottoDict: &lottoDict)
-        roundNum += 1
+    while roundNumber <= 5 {
+        let lottoNumbers = generateLottoNumbers()
+        storeLottoToDictionary(round: roundNumber, lottoNumbers: lottoNumbers, lottoDictionary: &lottoDict)
+        roundNumber += 1
     }
 
-    if let input = roundInput, let inputRound = Int(input) {
-        checkLotto(round: inputRound, lottoDict: lottoDict)
+    for round in 1..<roundNumber {
+        checkLottoNumbers(round: round, lottoDictionary: lottoDict)
     }
 }
 ```
-### generateLotto 함수
+### generateLottoNumbers 함수
 - Int.random으로 1~45까지 랜덤 숫자 생성
 - 로또번호 임시 저장변수에 해당 숫자가 있는지 확인후 없을 경우 추가
 ```swift
-func generateLotto() -> [Int] {
-    var lottoNum: [Int] = []
+func generateLottoNumbers() -> [Int] {
+    var lottoNumbers: [Int] = []
     
-    while lottoNum.count < 6 {
-        let num = Int.random(in: 1...45)
+    while lottoNumbers.count < 6 {
+        let number = Int.random(in: 1...45)
         
-        if !lottoNum.contains(num) {
-            lottoNum.append(num)
+        if !lottoNumbers.contains(number) {
+            lottoNumbers.append(number)
         }
     }
-    return lottoNum
+    return lottoNumbers
 }
 ```
 
-### storeLotto 함수
+### storeLottoToDictionary 함수
 - 전달받은 업데이트될 회차 번호 포멧을 적용 후 전달받은 로또번호 저장
 ```swift
-func storeLotto(roundNum: Int, lotto: [Int], lottoDict: inout [String: [Int]]) {
-    let roundStr: String = "\(roundNum)회차"
-    lottoDict[roundStr] = lotto
+func storeLottoToDictionary(round: Int, lottoNumbers: [Int], lottoDictionary: inout [Int: [Int]]) {
+    lottoDictionary[round] = lottoNumbers
 }
 ```
-### checkLotto 함수
-- 확인할 회차 번호 포멧을 적용 후 딕셔너리에 검색후 lottoNum에 임시 저장
+### checkLottoNumbers 함수
+- 확인할 회차 번호 포멧을 적용 후 딕셔너리에 검색후 lottoNumbers에 임시 저장
 - 회차 정보가 있는 경우 저장된 번호를 string으로 변환후 포맷 적용 및 출력
 - 회차 정보가 없는 경우 "해당 회차 정보가 없습니다. 출력
 ```swift
-func checkLotto(round: Int, lottoDict: [String: [Int]]) {
-    let roundStr: String = "\(round)회차"
+func checkLottoNumbers(round: Int, lottoDictionary: [Int: [Int]]) {
     
-    if let lottoNum = lottoDict[roundStr] {
-        let lottoStr = lottoNum.map { String($0) }.joined(separator: ", ")
-        print("\(round)회차의 로또 당첨 번호는 \(lottoStr) 입니다.")
+    if let lottoNumbers = lottoDictionary[round] {
+        let lottoStrings = lottoNumbers.map { String($0) }.joined(separator: ", ")
+        print("\(round)회차의 로또 당첨 번호는 \(lottoStrings) 입니다.")
     } else {
         print("해당 회차 정보가 없습니다.")
     }
 }
+
 ```

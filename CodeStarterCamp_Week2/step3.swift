@@ -6,49 +6,44 @@
 //
 import Foundation
 
-func generateLotto() -> [Int] {
-    var lottoNum: [Int] = []
+func generateLottoNumbers() -> [Int] {
+    var lottoNumbers: [Int] = []
     
-    while lottoNum.count < 6 {
-        let num = Int.random(in: 1...45)
+    while lottoNumbers.count < 6 {
+        let number = Int.random(in: 1...45)
         
-        if !lottoNum.contains(num) {
-            lottoNum.append(num)
+        if !lottoNumbers.contains(number) {
+            lottoNumbers.append(number)
         }
     }
-    return lottoNum
+    return lottoNumbers
 }
 
-func storeLotto(roundNum: Int, lotto: [Int], lottoDict: inout [String: [Int]]) {
-    let roundStr: String = "\(roundNum)회차"
-    lottoDict[roundStr] = lotto
+func storeLottoToDictionary(round: Int, lottoNumbers: [Int], lottoDictionary: inout [Int: [Int]]) {
+    lottoDictionary[round] = lottoNumbers
 }
 
-func checkLotto(round: Int, lottoDict: [String: [Int]]) {
-    let roundStr: String = "\(round)회차"
+func checkLottoNumbers(round: Int, lottoDictionary: [Int: [Int]]) {
     
-    if let lottoNum = lottoDict[roundStr] {
-        let lottoStr = lottoNum.map { String($0) }.joined(separator: ", ")
-        print("\(round)회차의 로또 당첨 번호는 \(lottoStr) 입니다.")
+    if let lottoNumbers = lottoDictionary[round] {
+        let lottoStrings = lottoNumbers.map { String($0) }.joined(separator: ", ")
+        print("\(round)회차의 로또 당첨 번호는 \(lottoStrings) 입니다.")
     } else {
         print("해당 회차 정보가 없습니다.")
     }
 }
 
-func lottoDict() {
-    print("로또 번호 생성기")
-    print("회차 검색: ", terminator: "")
-    let roundInput = readLine()
-    var roundNum: Int = 1
-    var lottoDict: [String: [Int]] = [:]
+func lottoOutput() {
+    var roundNumber: Int = 1
+    var lottoDictionary: [Int: [Int]] = [:]
 
-    while roundNum <= 5 {
-        let lottoNumbers = generateLotto()
-        storeLotto(roundNum: roundNum, lotto: lottoNumbers, lottoDict: &lottoDict)
-        roundNum += 1
+    while roundNumber <= 5 {
+        let lottoNumbers = generateLottoNumbers()
+        storeLottoToDictionary(round: roundNumber, lottoNumbers: lottoNumbers, lottoDictionary: &lottoDictionary)
+        roundNumber += 1
     }
 
-    if let input = roundInput, let inputRound = Int(input) {
-        checkLotto(round: inputRound, lottoDict: lottoDict)
+    for round in 1..<roundNumber {
+        checkLottoNumbers(round: round, lottoDictionary: lottoDictionary)
     }
 }
