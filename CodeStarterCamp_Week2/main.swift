@@ -17,7 +17,7 @@ playLottoGame(myLottoNumbers: myLottoNumbers)
 
 // MARK: - Step 3: 로또 당첨번호를 회차별로 저장하고, 확인하자!
 // 로또 번호 5번 생성하고 저장
-generateAndSaveLottoNumbers()
+generateAndSaveLottoNumbers(rounds: 5)
 
 // 특정 회차의 로또 번호 확인 1~5
 printSpecificLottoNumbers(round: 3)

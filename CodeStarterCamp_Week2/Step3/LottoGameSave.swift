@@ -8,19 +8,19 @@
 import Foundation
 
 // 회차와 Lotto번호들을 저장하는 Dictionary 타입의 변수를 생성
-var lottoHistory: [String: [Int]] = [:]
+var lottoHistory: [Int: [Int]] = [:]
 
 // 로또 번호를 5번 생성하고 저장하는 함수
-func generateAndSaveLottoNumbers() {
-    for round in 1...5 {
+func generateAndSaveLottoNumbers(rounds: Int) {
+    for round in 1...rounds {
         let roundLottoNumbers = generateLottoNumbers()
-        lottoHistory["\(round)회차"] = roundLottoNumbers
+        lottoHistory[round] = roundLottoNumbers
     }
 }
 
 // Dictionary에서 원하는 회차의 로또 당첨 번호를 찾아서 안전하게 추출 하는 함수
 func getLottoNumbers(round: Int) -> [Int]? {
-    return lottoHistory["\(round)회차"]
+    return lottoHistory[round]
 }
 
 // 특정 회차의 로또 번호를 안전하게 출력하는 함수
