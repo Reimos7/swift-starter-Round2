@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34811DC2274B93D800A1E994 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34811DC1274B93D800A1E994 /* main.swift */; };
+		C03656572C52E45E00E2C554 /* LottoGameSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03656562C52E45E00E2C554 /* LottoGameSave.swift */; };
 		C07E3A162C4ADCE7006F45B4 /* LottoGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07E3A152C4ADCE7006F45B4 /* LottoGame.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		34811DBE274B93D800A1E994 /* CodeStarterCamp_Week2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeStarterCamp_Week2; sourceTree = BUILT_PRODUCTS_DIR; };
 		34811DC1274B93D800A1E994 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C03656562C52E45E00E2C554 /* LottoGameSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoGameSave.swift; sourceTree = "<group>"; };
 		C07E3A152C4ADCE7006F45B4 /* LottoGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,10 +61,19 @@
 		34811DC0274B93D800A1E994 /* CodeStarterCamp_Week2 */ = {
 			isa = PBXGroup;
 			children = (
+				C03656552C52E44D00E2C554 /* Step3 */,
 				C07E3A142C4ADCBC006F45B4 /* Step2 */,
 				34811DC1274B93D800A1E994 /* main.swift */,
 			);
 			path = CodeStarterCamp_Week2;
+			sourceTree = "<group>";
+		};
+		C03656552C52E44D00E2C554 /* Step3 */ = {
+			isa = PBXGroup;
+			children = (
+				C03656562C52E45E00E2C554 /* LottoGameSave.swift */,
+			);
+			path = Step3;
 			sourceTree = "<group>";
 		};
 		C07E3A142C4ADCBC006F45B4 /* Step2 */ = {
@@ -131,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C07E3A162C4ADCE7006F45B4 /* LottoGame.swift in Sources */,
+				C03656572C52E45E00E2C554 /* LottoGameSave.swift in Sources */,
 				34811DC2274B93D800A1E994 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
