@@ -147,5 +147,5 @@ func checkLottoNumbers(round: Int, lottoDictionary: [Int: [Int]]) {
         print("해당 회차 정보가 없습니다.")
     }
 }
-
 ```
+
