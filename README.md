@@ -81,3 +81,72 @@ func checkLotto(myLotto: [Int], lotto: [Int]) {
     }
 }
 ```
+
+3. step3
+“Round2 마지막 스텝 "로또 당첨 번호를 회차별로 저장하고, 확인하자!” \
+기능구현 설명입니다.
+
+## 순서도
+<img width="192" alt="image" src="https://github.com/user-attachments/assets/74435a00-703e-41bb-86e3-17e0d3d305dd">
+
+## 기능구현
+### lottoOutput 함수
+- 총 5개의 로또 번호를 위해 while문으로 로또번호 생성 함수 generateLottoNumbers() 실행
+- 생성 즉시 로또번호 저장 함수 storeLottoToDictionary()실행
+- 저장된 로또번호를 출력하는 checkLottoNumbers()실행
+```swift
+func lottoOutput() {
+    var roundNumber: Int = 1
+    var lottoDict: [Int: [Int]] = [:]
+
+    while roundNumber <= 5 {
+        let lottoNumbers = generateLottoNumbers()
+        storeLottoToDictionary(round: roundNumber, lottoNumbers: lottoNumbers, lottoDictionary: &lottoDict)
+        roundNumber += 1
+    }
+
+    for round in 1..<roundNumber {
+        checkLottoNumbers(round: round, lottoDictionary: lottoDict)
+    }
+}
+```
+### generateLottoNumbers 함수
+- Int.random으로 1~45까지 랜덤 숫자 생성
+- 로또번호 임시 저장변수에 해당 숫자가 있는지 확인후 없을 경우 추가
+```swift
+func generateLottoNumbers() -> [Int] {
+    var lottoNumbers: [Int] = []
+    
+    while lottoNumbers.count < 6 {
+        let number = Int.random(in: 1...45)
+        
+        if !lottoNumbers.contains(number) {
+            lottoNumbers.append(number)
+        }
+    }
+    return lottoNumbers
+}
+```
+
+### storeLottoToDictionary 함수
+- 전달받은 업데이트될 회차 번호 포멧을 적용 후 전달받은 로또번호 저장
+```swift
+func storeLottoToDictionary(round: Int, lottoNumbers: [Int], lottoDictionary: inout [Int: [Int]]) {
+    lottoDictionary[round] = lottoNumbers
+}
+```
+### checkLottoNumbers 함수
+- 확인할 회차 번호 포멧을 적용 후 딕셔너리에 검색후 lottoNumbers에 임시 저장
+- 회차 정보가 있는 경우 저장된 번호를 string으로 변환후 포맷 적용 및 출력
+- 회차 정보가 없는 경우 "해당 회차 정보가 없습니다. 출력
+```swift
+func checkLottoNumbers(round: Int, lottoDictionary: [Int: [Int]]) {
+    
+    if let lottoNumbers = lottoDictionary[round] {
+        let lottoStrings = lottoNumbers.map { String($0) }.joined(separator: ", ")
+        print("\(round)회차의 로또 당첨 번호는 \(lottoStrings) 입니다.")
+    } else {
+        print("해당 회차 정보가 없습니다.")
+    }
+}
+```
