@@ -26,8 +26,8 @@ func printLotteryResult(_ sameNumber: [Int]) {
     if sameNumber.isEmpty {
         print("아쉽지만 겹치는 번호가 없습니다.")
     } else {
-        let numberString: String = sameNumber.map{ String($0) }.joined(separator: ", ")
-        print("축하합니다! 겹치는 번호는 \(numberString) 입니다!")
+        let numberJoined: String = sameNumber.map{ String($0) }.joined(separator: ", ")
+        print("축하합니다! 겹치는 번호는 \(numberJoined) 입니다!")
     }
 }
 
