@@ -22,12 +22,12 @@ func findSameNumbers(of chosenNumbers: [Int], compared lottoNumbers: Set<Int>) -
     return Array(intersection)
 }
 
-func printLotteryResult(_ sameNumber: [Int]) {
-    if sameNumber.isEmpty {
+func printLotteryResult(_ sameNumbers: [Int]) {
+    if sameNumbers.isEmpty {
         print("아쉽지만 겹치는 번호가 없습니다.")
     } else {
-        let numberJoined: String = sameNumber.map{ String($0) }.joined(separator: ", ")
-        print("축하합니다! 겹치는 번호는 \(numberJoined) 입니다!")
+        let numbersJoined: String = sameNumbers.map{ String($0) }.joined(separator: ", ")
+        print("축하합니다! 겹치는 번호는 \(numbersJoined) 입니다!")
     }
 }
 
