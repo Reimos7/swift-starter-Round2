@@ -9,9 +9,11 @@ import Foundation
 
 func createLottoNumbers() -> Set<Int> {
     var lottoNumbers: Set<Int> = Set<Int>()
+    var randomNumber: Int
     
     repeat {
-        lottoNumbers.insert(Int.random(in: 1...45))
+        randomNumber = Int.random(in: 1...45)
+        lottoNumbers.insert(randomNumber)
     } while lottoNumbers.count < 6
     
     return lottoNumbers
