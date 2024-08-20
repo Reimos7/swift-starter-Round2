@@ -11,6 +11,7 @@ let myLottoNumbers: Set<Int> = [11, 26, 3, 4, 35, 6]
 var winningLottoNumbers: Set<Int> = []
 
 func makeWinningNumbers(lottery: [Int]) {
+    winningLottoNumbers.removeAll()
     var number = 0
     while winningLottoNumbers.count < 6 {
         winningLottoNumbers.insert(lottery[number])
