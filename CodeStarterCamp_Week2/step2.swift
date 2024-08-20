@@ -29,10 +29,11 @@ let result: Set<Int> = winningLottoNumbers.intersection(myLottoNumbers)
 
 func matchLottoNumbers(lottery: [Int]) {
     makeWinningNumbers(lottery: lottery)
-    if result.count > 0 {
-        print("축하합니다! 겹치는 번호는 \(result.sorted())입니다!")
-    } else {
-        print("아쉽지만 겹치는 번호가 없습니다.")
+    if lottery.count == 6 {
+        if result.count > 0 {
+            print("축하합니다! 겹치는 번호는 \(result.sorted())입니다!")
+        } else {
+            print("아쉽지만 겹치는 번호가 없습니다.")
+        }
     }
 }
-
