@@ -31,7 +31,7 @@ func matchMyNumber() {
         print("아쉽지만 겹치는 번호가 없습니다.")
     }
     else {
-        print("축하합니다! 겹치는 번호는 \(numberCheck.map{String($0)}.joined(separator: ",")) 입니다!")
+        print("축하합니다! 겹치는 번호는 \(numberCheck.map{String($0)}.joined(separator: ", ")) 입니다!")
     }
 }
 
