@@ -16,7 +16,7 @@ func makeWinningNumbers(lottery: [Int]) {
             winningLottoNumbers.insert(lottery[number])
         }
         if winningLottoNumbers.count < 6 {
-            print("중복 값이 있습니다.")
+            print("중복 값이 있습니다. 서로 다른 6개의 번호를 입력하세요.")
         }
     } else if lottery.count < 6 {
         print("당첨 번호는 6개 입니다. 번호를 더 입력하세요.")
@@ -29,7 +29,7 @@ let result: Set<Int> = winningLottoNumbers.intersection(myLottoNumbers)
 
 func matchLottoNumbers(lottery: [Int]) {
     makeWinningNumbers(lottery: lottery)
-    if lottery.count == 6 {
+    if winningLottoNumbers.count == 6 {
         if result.count > 0 {
             print("축하합니다! 겹치는 번호는 \(result.sorted())입니다!")
         } else {
