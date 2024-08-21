@@ -1,8 +1,8 @@
 //
-//  step2.swift
+//  step2-1.swift
 //  CodeStarterCamp_Week2
 //
-//  Created by 변예린 on 8/15/24.
+//  Created by 변예린 on 8/20/24.
 //
 
 import Foundation
@@ -19,14 +19,13 @@ func makeWinningNumbers(lottery: [Int]) {
     }
 }
 
-
-let result: Set<Int> = winningLottoNumbers.intersection(myLottoNumbers)
-
 func matchLottoNumbers(lottery: [Int]) {
     makeWinningNumbers(lottery: lottery)
+    let result: Set<Int> = winningLottoNumbers.intersection(myLottoNumbers)
     if result.count > 0 {
-        print("축하합니다! 겹치는 번호는 \(result.sorted())입니다!")
+        print("축하합니다! 겹치는 번호는 \(result)입니다!")
     } else {
         print("아쉽지만 겹치는 번호가 없습니다.")
     }
 }
+
