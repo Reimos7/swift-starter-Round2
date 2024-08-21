@@ -23,7 +23,7 @@ func createRandomLottoNumber() -> Set<Int> {
 }
 
 func matchMyNumber(myEnteredLottoNumber: Set<Int>, randomLottoNumbers: Set<Int>) {
-    let numberCheck: Set<Int> = randomLottoNumbers.intersection(myLottoNumbers)
+    let numberCheck: Set<Int> = randomLottoNumbers.intersection(myEnteredLottoNumber)
     
     if numberCheck.isEmpty {
         print("아쉽지만 겹치는 번호가 없습니다.")
