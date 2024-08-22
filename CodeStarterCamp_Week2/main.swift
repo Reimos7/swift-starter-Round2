@@ -8,6 +8,5 @@
 
 import Foundation
 
-matchLottoNumbers(lottery: [1, 31, 24, 21, 23, 41])
+matchLottoNumbers()
 
-matchLottoNumbers(lottery: [15, 11, 6, 39, 24, 35])
