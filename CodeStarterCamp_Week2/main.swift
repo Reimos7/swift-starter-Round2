@@ -8,5 +8,7 @@
 
 import Foundation
 
-print("Hello, World!")
+
+let myLottoNumbers: Set<Int> = [23, 14, 33, 56, 43, 10]
+checkLottoResult(myEnteredLottoNumber: myLottoNumbers)
 
