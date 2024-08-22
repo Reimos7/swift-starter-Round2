@@ -7,7 +7,6 @@
 
 import Foundation
 
-let myLottoNumbers: Set<Int> = [11, 26, 3, 4, 35, 6]
 var lottery: Set<Int> = []
 
 func makeLottery() {
@@ -17,7 +16,14 @@ func makeLottery() {
     }
 }
 
-func matchLottoNumbers() {
+func matchLottoNumbers(myNumbers: Set<Int>) {
+    let myLottoNumbers: Set<Int> = myNumbers
+    
+    if myLottoNumbers.count != 6 {
+        print("1 ~ 45 숫자 중 서로 다른 로또 번호를 6개 입력하세요.")
+        return
+    }
+    
     makeLottery()
     
     let result: Set<Int> = lottery.intersection(myLottoNumbers)
@@ -30,4 +36,3 @@ func matchLottoNumbers() {
         print("아쉽지만 겹치는 번호가 없습니다.")
     }
 }
-
