@@ -8,25 +8,50 @@
 import Foundation
 
 class LottoNumberGenerator {
-    var arrLottoNumber: [Int] = []
+    var winningNumbers: [Int] = []
+    var bonusNumber: Int = 0
+    var currentLottoRound: Int = 0
     
-    func getLottoNumber() {
+    func getLottoNumbers() {
         let lottoNumber = Int.random(in: 1...45)
         
-        if !arrLottoNumber.contains(lottoNumber) {
-            addLottoNumber(lottoNumber: lottoNumber)
-        }
-    }
-    
-    func addLottoNumber(lottoNumber: Int) {
-        arrLottoNumber.append(lottoNumber)
-    }
-    
-    func generateWinningNumbers() -> [Int] {
-        while arrLottoNumber.count < 6 {
-            getLottoNumber()
+        if !winningNumbers.contains(lottoNumber) {
+            winningNumbers.append(lottoNumber)
         }
         
-        return arrLottoNumber
+        repeat {
+            bonusNumber = Int.random(in: 1...45)
+        } while winningNumbers.contains(bonusNumber)
+    }
+    
+    func generateLottoWinningNumbers() {
+        winningNumbers = []
+        
+        while winningNumbers.count < 6 {
+            getLottoNumbers()
+        }
+        
+        winningNumbers.sort()
+        currentLottoRound += 1
+    }
+    
+    func printLottoWinningNumbers() {
+        generateLottoWinningNumbers()
+        print("\(currentLottoRound)회차의 당첨 번호는 \(winningNumbers), 보너스 번호는 \(bonusNumber)입니다.")
+    }
+}
+
+func checkMatchingNumbers(myLottoNumbers: [Int], winningNumbers: [Int], bonusNumber: Int) {
+    let matchingNumbers = myLottoNumbers.filter { winningNumbers.contains($0) }
+    let bonusMatch = myLottoNumbers.contains(bonusNumber)
+        
+    if matchingNumbers.isEmpty && !bonusMatch {
+        print("아쉽지만 겹치는 번호가 없습니다.")
+    } else {
+        print("축하합니다! 겹치는 번호는 \(matchingNumbers) 입니다!")
+        
+        if bonusMatch {
+            print("보너스 번호 \(bonusNumber)도 맞췄습니다!")
+        }
     }
 }
