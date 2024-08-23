@@ -41,17 +41,22 @@ class LottoNumberGenerator {
     }
 }
 
-func checkMatchingNumbers(myLottoNumbers: [Int], winningNumbers: [Int], bonusNumber: Int) {
+func checkMatchingNumbers(myLottoRound: Int, myLottoNumbers: [Int], currentLottoRound: Int, winningNumbers: [Int], bonusNumber: Int) {
     let matchingNumbers = myLottoNumbers.filter { winningNumbers.contains($0) }
     let bonusMatch = myLottoNumbers.contains(bonusNumber)
-        
-    if matchingNumbers.isEmpty && !bonusMatch {
-        print("아쉽지만 겹치는 번호가 없습니다.")
-    } else {
-        print("축하합니다! 겹치는 번호는 \(matchingNumbers) 입니다!")
-        
-        if bonusMatch {
-            print("보너스 번호 \(bonusNumber)도 맞췄습니다!")
+    
+    if myLottoRound == currentLottoRound {
+        if matchingNumbers.isEmpty && !bonusMatch {
+            print("아쉽지만 겹치는 번호가 없습니다.")
+        } else {
+            print("축하합니다! 겹치는 번호는 \(matchingNumbers) 입니다!")
+            
+            if bonusMatch {
+                print("보너스 번호 \(bonusNumber)도 맞췄습니다!")
+            }
         }
+    }
+    else {
+        print("회차가 다릅니다.")
     }
 }
