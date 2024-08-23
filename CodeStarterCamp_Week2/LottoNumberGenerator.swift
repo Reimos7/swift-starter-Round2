@@ -47,6 +47,8 @@ func checkMatchingNumbers(myLottoRound: Int, myLottoNumbers: [Int], currentLotto
     if myLottoRound == currentLottoRound {
         if matchingNumbers.isEmpty && !bonusMatch {
             print("아쉽지만 겹치는 번호가 없습니다.")
+        } else if matchingNumbers.isEmpty && bonusMatch {
+            print("보너스 번호 \(bonusNumber)만 맞췄습니다!")
         } else {
             print("축하합니다! 겹치는 번호는 \(matchingNumbers) 입니다!")
             
