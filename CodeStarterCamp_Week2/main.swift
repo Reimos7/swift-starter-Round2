@@ -8,5 +8,6 @@
 
 import Foundation
 
-print("Hello, World!")
-
+let lottoGenerator = LottoNumberGenerator()
+let winningNumbers = lottoGenerator.generateWinningNumbers()
+print("당첨 번호: \(winningNumbers)")
