@@ -10,7 +10,7 @@ import Foundation
 class LottoNumberGenerator {
     var winningNumbers: [Int] = []
     var bonusNumber: Int = 0
-    var currentLottoRound: Int = 0
+    var currentLottoRound: Int = Int.random(in: 1...2)
     
     func getLottoNumbers() {
         let lottoNumber = Int.random(in: 1...45)
@@ -32,7 +32,6 @@ class LottoNumberGenerator {
         }
         
         winningNumbers.sort()
-        currentLottoRound += 1
     }
     
     func printLottoWinningNumbers() {
