@@ -14,7 +14,7 @@ func makeLottery() {
     while lottery.count < 6 {
         let randomNumber = Int.random(in: 1...45)
         lottery.insert(randomNumber)
-    }; print("당첨번호",lottery);
+    }
 }
 
 func matchLottoNumbers(myNumbers: Set<Int>) {
