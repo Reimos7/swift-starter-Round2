@@ -18,7 +18,7 @@ func saveHistory() {
 
 func findHistory(time: Int) {
     if let history = winningHistory["\(time)회차"] {
-        let historyResult = history.map{String($0)}.joined(separator: ", ")
+        let historyResult = history.sorted().map{String($0)}.joined(separator: ", ")
         print("\(time)회차의 로또 당첨 번호는 \(historyResult) 입니다.")
     }
 }
