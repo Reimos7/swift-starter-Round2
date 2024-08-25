@@ -16,6 +16,7 @@ func createLottoNumbers() -> Set<Int> {
         lottoNumbers.insert(randomNumber)
     } while lottoNumbers.count < 6
     
+    recordLottoRounds(lottoNumbers)
     return lottoNumbers
 }
 
