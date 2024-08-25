@@ -7,7 +7,6 @@
 
 import Foundation
 
-// step3
 var lottoRoundDict: [String: [Int]] = [:]
 
 func recordLottoRounds(_ lottoNumbers: Set<Int>) {
