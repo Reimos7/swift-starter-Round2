@@ -11,7 +11,7 @@ var lottoRoundDictionary: [Int: [Int]] = [:]
 
 func recordLottoRounds(_ lottoNumbers: Set<Int>) {
     let currentRound: Int = getCurrentRound()
-    lottoRoundDictionary[currentRound] = Array(lottoNumbers)
+    lottoRoundDictionary[currentRound] = Array(lottoNumbers).sorted(by: <)
 }
 
 func getCurrentRound() -> Int {

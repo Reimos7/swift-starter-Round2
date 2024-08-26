@@ -22,7 +22,7 @@ func createLottoNumbers() -> Set<Int> {
 
 func findSameNumbers(of chosenNumbers: [Int], compared lottoNumbers: Set<Int>) -> [Int] {
     let intersection: Set<Int> = lottoNumbers.intersection(Set(chosenNumbers))
-    return Array(intersection)
+    return Array(intersection).sorted(by: <)
 }
 
 func printLotteryResult(_ sameNumbers: [Int]) {
