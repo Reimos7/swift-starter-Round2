@@ -7,18 +7,21 @@
 
 import Foundation
 
-var times = 0
-var winningHistory = [String: Set<Int>]()
+var rounds = 0
+var winningHistory = [Int: Set<Int>]()
 
 func saveHistory() {
     makeLottery()
-    times += 1
-    winningHistory["\(times)회차"] = lottery
+    rounds += 1
+    winningHistory[rounds] = lottery
 }
 
-func findHistory(time: Int) {
-    if let history = winningHistory["\(time)회차"] {
+func findHistory(round: Int) {
+    guard let history = winningHistory[round] else { print("해당 회차의 정보를 찾을 수 없습니다.")
+        return }
+        
         let historyResult = history.sorted().map{String($0)}.joined(separator: ", ")
-        print("\(time)회차의 로또 당첨 번호는 \(historyResult) 입니다.")
+    
+        print("\(round)회차의 로또 당첨 번호는 \(historyResult) 입니다.")
     }
-}
+

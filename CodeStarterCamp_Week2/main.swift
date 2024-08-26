@@ -14,4 +14,4 @@ saveHistory()
 saveHistory()
 saveHistory()
 
-findHistory(time: 2)
+findHistory(round: 6)
