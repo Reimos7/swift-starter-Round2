@@ -7,27 +7,19 @@
 
 import Foundation
 
-var lottoRoundDictionary: [String: [Int]] = [:]
+var lottoRoundDictionary: [Int: [Int]] = [:]
 
 func recordLottoRounds(_ lottoNumbers: Set<Int>) {
     let currentRound: Int = getCurrentRound()
-    lottoRoundDictionary["\(currentRound)회차"] = Array(lottoNumbers)
+    lottoRoundDictionary[currentRound] = Array(lottoNumbers)
 }
 
 func getCurrentRound() -> Int {
-    var preRoundNumber: Int = 0
-    for round in lottoRoundDictionary.keys {
-        if let roundNumber: Int = Int(round.split(separator: "회")[0]) {
-            if preRoundNumber < roundNumber {
-                preRoundNumber = roundNumber
-            }
-        }
-    }
-    return preRoundNumber + 1
+    return lottoRoundDictionary.keys.count + 1
 }
 
 func printLottoNumbers(round: Int) {
-    if let lottoNumbers: [Int] = lottoRoundDictionary["\(round)회차"] {
+    if let lottoNumbers: [Int] = lottoRoundDictionary[round] {
         let numbersJoined: String = lottoNumbers.map{ String($0) }.joined(separator: ", ")
         print("\(round)회차의 로또 당첨 번호는 \(numbersJoined) 입니다.")
     }
