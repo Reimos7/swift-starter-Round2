@@ -7,37 +7,35 @@
 
 import Foundation
 
-class LottoNumberGenerator {
-    var winningNumbers: [Int] = []
-    var bonusNumber: Int = 0
-    var currentLottoRound: Int = Int.random(in: 1...2)
+var winningNumbers: [Int] = []
+var bonusNumber: Int = 0
+var currentLottoRound: Int = Int.random(in: 1...2)
+
+func getLottoNumbers() {
+    let lottoNumber = Int.random(in: 1...45)
     
-    func getLottoNumbers() {
-        let lottoNumber = Int.random(in: 1...45)
-        
-        if !winningNumbers.contains(lottoNumber) {
-            winningNumbers.append(lottoNumber)
-        }
-        
-        repeat {
-            bonusNumber = Int.random(in: 1...45)
-        } while winningNumbers.contains(bonusNumber)
+    if !winningNumbers.contains(lottoNumber) {
+        winningNumbers.append(lottoNumber)
     }
     
-    func generateLottoWinningNumbers() {
-        winningNumbers = []
-        
-        while winningNumbers.count < 6 {
-            getLottoNumbers()
-        }
-        
-        winningNumbers.sort()
+    repeat {
+        bonusNumber = Int.random(in: 1...45)
+    } while winningNumbers.contains(bonusNumber)
+}
+
+func generateLottoWinningNumbers() {
+    winningNumbers = []
+    
+    while winningNumbers.count < 6 {
+        getLottoNumbers()
     }
     
-    func printLottoWinningNumbers() {
-        generateLottoWinningNumbers()
-        print("\(currentLottoRound)회차의 당첨 번호는 \(winningNumbers), 보너스 번호는 \(bonusNumber)입니다.")
-    }
+    winningNumbers.sort()
+}
+
+func printLottoWinningNumbers() {
+    generateLottoWinningNumbers()
+    print("\(currentLottoRound)회차의 당첨 번호는 \(winningNumbers), 보너스 번호는 \(bonusNumber)입니다.")
 }
 
 func checkMatchingNumbers(myLottoRound: Int, myLottoNumbers: [Int], currentLottoRound: Int, winningNumbers: [Int], bonusNumber: Int) {
