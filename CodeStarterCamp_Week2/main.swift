@@ -12,4 +12,4 @@ let myLottoRound: Int = 1
 let myLottoNumbers: [Int] = [6, 14, 3, 5, 32, 33]
 
 printLottoWinningNumbers()
-checkMatchingNumbers(myLottoRound: myLottoRound, myLottoNumbers: myLottoNumbers, currentLottoRound: currentLottoRound, winningNumbers: winningNumbers, bonusNumber: bonusNumber)
+checkMatchingNumbers(myLottoNumbers: myLottoNumbers, winningNumbers: winningNumbers, bonusNumber: bonusNumber)
