@@ -17,3 +17,4 @@ drawLottery(chosenNumbers: myLottoNumbers)
 drawLottery(chosenNumbers: myLottoNumbers)
 
 printLottoNumbers(round: 3)
+printLottoNumbers(round: 53)
