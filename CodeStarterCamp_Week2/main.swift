@@ -14,7 +14,7 @@ checkLottoResult(myEnteredLottoNumber: myLottoNumbers)
 
 
 for _ in 1...5 {
-    lottoRoundSave()
+    saveLottoRound()
 }
 
 printLottoRound(round: 2)

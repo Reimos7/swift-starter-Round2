@@ -10,7 +10,7 @@ import Foundation
 var roundSave: [Int : Set<Int>] = [:]
 var roundCount = 0
 
-func lottoRoundSave() {
+func saveLottoRound() {
     roundCount += 1
     let newLottoNumbers = createRandomLottoNumber()
     roundSave[roundCount] = newLottoNumbers
