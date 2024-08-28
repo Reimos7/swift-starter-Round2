@@ -9,7 +9,7 @@ import Foundation
 
 var winningNumbers: [Int] = []
 var bonusNumber: Int = 0
-var currentLottoRound: Int = 0
+var currentLottoRound: Int? = nil
 var lottoRoundInfo: [String: [Int]] = [:]
 
 func createLottoNumber() {
@@ -32,12 +32,23 @@ func generateLottoWinningNumbers() {
     }
     
     winningNumbers.sort()
-    currentLottoRound += 1
+    
+    if let round = currentLottoRound {
+        currentLottoRound = round + 1
+    } else {
+        currentLottoRound = 1
+    }
+    
     saveRoundWinningNumbers()
 }
 
 func saveRoundWinningNumbers() {
-    let key = "\(currentLottoRound)회차"
+    guard let round = currentLottoRound else {
+        print("회차 정보가 설정되지 않았습니다.")
+        return
+    }
+    
+    let key = "\(round)회차"
     lottoRoundInfo[key] = winningNumbers + [bonusNumber]
 }
 
