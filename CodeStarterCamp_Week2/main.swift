@@ -10,5 +10,13 @@ import Foundation
 
 let myLottoNumbers: [Int] = [6, 14, 3, 5, 32, 33]
 
+for _ in 1...5 {
+    generateLottoWinningNumbers()
+}
+
+printLottoAllRoundInfo()
+
 printLottoWinningNumbers()
-matchNumbers(myLottoNumbers: myLottoNumbers)
+printMatchingLottoResults(myLottoNumbers: myLottoNumbers)
+
+printLottoRoundInfo(round: 3)
