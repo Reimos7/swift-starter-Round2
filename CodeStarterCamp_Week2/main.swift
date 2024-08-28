@@ -11,3 +11,10 @@ import Foundation
 let myLottoNumbers: [Int] = [1, 2, 3, 4, 5, 6]
 
 drawLottery(chosenNumbers: myLottoNumbers)
+drawLottery(chosenNumbers: myLottoNumbers)
+drawLottery(chosenNumbers: myLottoNumbers)
+drawLottery(chosenNumbers: myLottoNumbers)
+drawLottery(chosenNumbers: myLottoNumbers)
+
+printLottoNumbers(round: 3)
+printLottoNumbers(round: 53)
