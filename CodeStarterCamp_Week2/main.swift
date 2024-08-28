@@ -8,5 +8,7 @@
 
 import Foundation
 
-print("Hello, World!")
+let myLottoNumbers: [Int] = [6, 14, 3, 5, 32, 33]
 
+printLottoWinningNumbers()
+matchNumbers(myLottoNumbers: myLottoNumbers)
