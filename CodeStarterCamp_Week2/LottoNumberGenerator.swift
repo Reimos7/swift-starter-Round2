@@ -34,10 +34,12 @@ func generateLottoWinningNumbers() {
 
 func printLottoWinningNumbers() {
     generateLottoWinningNumbers()
-    print("이번 회차의 당첨 번호는 \(winningNumbers), 보너스 번호는 \(bonusNumber)입니다.")
+    let sWinningNumbers = winningNumbers.map { String($0) }.joined(separator: ", ")
+    
+    print("이번 회차의 당첨 번호는 \(sWinningNumbers), 보너스 번호는 \(bonusNumber)입니다.")
 }
 
-func checkMatchingNumbers(myLottoNumbers: [Int], winningNumbers: [Int], bonusNumber: Int) {
+func matchNumbers(myLottoNumbers: [Int]) {
     let matchingNumbers = myLottoNumbers.filter { winningNumbers.contains($0) }
     let bonusMatch = myLottoNumbers.contains(bonusNumber)
     
@@ -46,7 +48,9 @@ func checkMatchingNumbers(myLottoNumbers: [Int], winningNumbers: [Int], bonusNum
     } else if matchingNumbers.isEmpty && bonusMatch {
         print("보너스 번호 \(bonusNumber)만 맞췄습니다!")
     } else {
-        print("축하합니다! 겹치는 번호는 \(matchingNumbers) 입니다!")
+        let sMatchingNumbers = matchingNumbers.map { String($0) }.joined(separator: ", ")
+        
+        print("축하합니다! 겹치는 번호는 \(sMatchingNumbers) 입니다!")
         
         if bonusMatch {
             print("보너스 번호 \(bonusNumber)도 맞췄습니다!")

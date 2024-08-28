@@ -8,8 +8,7 @@
 
 import Foundation
 
-let myLottoRound: Int = 1
 let myLottoNumbers: [Int] = [6, 14, 3, 5, 32, 33]
 
 printLottoWinningNumbers()
-checkMatchingNumbers(myLottoNumbers: myLottoNumbers, winningNumbers: winningNumbers, bonusNumber: bonusNumber)
+matchNumbers(myLottoNumbers: myLottoNumbers)
