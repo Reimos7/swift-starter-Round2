@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		34811DC2274B93D800A1E994 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34811DC1274B93D800A1E994 /* main.swift */; };
 		F471F2092C70725100F7F416 /* lottoNumberGeneretor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471F2082C70725100F7F416 /* lottoNumberGeneretor.swift */; };
+		F4EA10122C7631EF00AC8D9F /* lottoRoundSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EA10112C7631EF00AC8D9F /* lottoRoundSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		34811DBE274B93D800A1E994 /* CodeStarterCamp_Week2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeStarterCamp_Week2; sourceTree = BUILT_PRODUCTS_DIR; };
 		34811DC1274B93D800A1E994 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F471F2082C70725100F7F416 /* lottoNumberGeneretor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lottoNumberGeneretor.swift; sourceTree = "<group>"; };
+		F4EA10112C7631EF00AC8D9F /* lottoRoundSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lottoRoundSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				34811DC1274B93D800A1E994 /* main.swift */,
 				F471F2082C70725100F7F416 /* lottoNumberGeneretor.swift */,
+				F4EA10112C7631EF00AC8D9F /* lottoRoundSearch.swift */,
 			);
 			path = CodeStarterCamp_Week2;
 			sourceTree = "<group>";
@@ -122,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EA10122C7631EF00AC8D9F /* lottoRoundSearch.swift in Sources */,
 				34811DC2274B93D800A1E994 /* main.swift in Sources */,
 				F471F2092C70725100F7F416 /* lottoNumberGeneretor.swift in Sources */,
 			);
