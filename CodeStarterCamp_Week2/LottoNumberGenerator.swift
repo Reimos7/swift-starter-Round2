@@ -10,7 +10,7 @@ import Foundation
 var winningNumbers: [Int] = []
 var bonusNumber: Int = 0
 var currentLottoRound: Int? = nil
-var lottoRoundInfo: [String: [Int]] = [:]
+var lottoRoundInfo: [Int: [Int]] = [:]
 
 func createLottoNumber() {
     let lottoNumber = Int.random(in: 1...45)
@@ -48,8 +48,7 @@ func saveRoundWinningNumbers() {
         return
     }
     
-    let key = "\(round)회차"
-    lottoRoundInfo[key] = winningNumbers + [bonusNumber]
+    lottoRoundInfo[round] = winningNumbers + [bonusNumber]
 }
 
 func printLottoAllRoundInfo() {
@@ -58,9 +57,7 @@ func printLottoAllRoundInfo() {
         return
     }
     
-    let sortedKeys = lottoRoundInfo.keys.sorted(by: {
-        Int($0.replacingOccurrences(of: "회차", with: ""))! < Int($1.replacingOccurrences(of: "회차", with: ""))!
-    })
+    let sortedKeys = lottoRoundInfo.keys.sorted()
     
     print("저장된 로또 당첨 번호 내역입니다.")
     
@@ -69,21 +66,19 @@ func printLottoAllRoundInfo() {
             let sWinningNumbers = numbers.dropLast().map { String($0) }.joined(separator: ", ")
             let sBonusNumber = numbers.last!
             
-            print("\(key)의 당첨 번호는 \(sWinningNumbers), 보너스 번호는 \(sBonusNumber)입니다.")
+            print("\(key)회차의 당첨 번호는 \(sWinningNumbers), 보너스 번호는 \(sBonusNumber)입니다.")
         }
     }
 }
 
 func printLottoRoundInfo(round: Int) {
-    let key = "\(round)회차"
-    
-    if let numbers = lottoRoundInfo[key] {
+    if let numbers = lottoRoundInfo[round] {
         let sWinningNumbers = numbers.dropLast().map { String($0) }.joined(separator: ", ")
         let sBonusNumber = numbers.last!
         
-        print("\(key)의 당첨 번호는 \(sWinningNumbers), 보너스 번호는 \(sBonusNumber)입니다.")
+        print("\(round)회차의 당첨 번호는 \(sWinningNumbers), 보너스 번호는 \(sBonusNumber)입니다.")
     } else {
-        print("\(key)에 대한 정보가 없습니다.")
+        print("\(round)회차에 대한 정보가 없습니다.")
     }
 }
 
