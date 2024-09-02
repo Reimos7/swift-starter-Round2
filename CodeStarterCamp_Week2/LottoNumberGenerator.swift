@@ -9,8 +9,10 @@ import Foundation
 
 var winningNumbers: [Int] = []
 var bonusNumber: Int = 0
+var currentLottoRound: Int? = nil
+var lottoRoundInfo: [Int: [Int]] = [:]
 
-func getLottoNumbers() {
+func createLottoNumber() {
     let lottoNumber = Int.random(in: 1...45)
     
     if !winningNumbers.contains(lottoNumber) {
@@ -26,20 +28,67 @@ func generateLottoWinningNumbers() {
     winningNumbers = []
     
     while winningNumbers.count < 6 {
-        getLottoNumbers()
+        createLottoNumber()
     }
     
     winningNumbers.sort()
+    
+    if let round = currentLottoRound {
+        currentLottoRound = round + 1
+    } else {
+        currentLottoRound = 1
+    }
+    
+    saveRoundWinningNumbers()
+}
+
+func saveRoundWinningNumbers() {
+    guard let round = currentLottoRound else {
+        print("회차 정보가 설정되지 않았습니다.")
+        return
+    }
+    
+    lottoRoundInfo[round] = winningNumbers + [bonusNumber]
+}
+
+func printLottoAllRoundInfo() {
+    if lottoRoundInfo.isEmpty {
+        print("저장된 회차 정보가 없습니다.")
+        return
+    }
+    
+    let sortedKeys = lottoRoundInfo.keys.sorted()
+    
+    print("저장된 로또 당첨 번호 내역입니다.")
+    
+    for key in sortedKeys {
+        if let numbers = lottoRoundInfo[key] {
+            let sWinningNumbers = numbers.dropLast().map { String($0) }.joined(separator: ", ")
+            let sBonusNumber = numbers.last!
+            
+            print("\(key)회차의 당첨 번호는 \(sWinningNumbers), 보너스 번호는 \(sBonusNumber)입니다.")
+        }
+    }
+}
+
+func printLottoRoundInfo(round: Int) {
+    if let numbers = lottoRoundInfo[round] {
+        let sWinningNumbers = numbers.dropLast().map { String($0) }.joined(separator: ", ")
+        let sBonusNumber = numbers.last!
+        
+        print("\(round)회차의 당첨 번호는 \(sWinningNumbers), 보너스 번호는 \(sBonusNumber)입니다.")
+    } else {
+        print("\(round)회차에 대한 정보가 없습니다.")
+    }
 }
 
 func printLottoWinningNumbers() {
-    generateLottoWinningNumbers()
     let sWinningNumbers = winningNumbers.map { String($0) }.joined(separator: ", ")
     
     print("이번 회차의 당첨 번호는 \(sWinningNumbers), 보너스 번호는 \(bonusNumber)입니다.")
 }
 
-func matchNumbers(myLottoNumbers: [Int]) {
+func printMatchingLottoResults(myLottoNumbers: [Int]) {
     let matchingNumbers = myLottoNumbers.filter { winningNumbers.contains($0) }
     let bonusMatch = myLottoNumbers.contains(bonusNumber)
     
