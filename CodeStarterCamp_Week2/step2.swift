@@ -5,13 +5,13 @@
 //  Created by Reimos on 9/29/24.
 //
 
-func makeLottoNumbers()  {
+func makeLottoNumber()  {
     
     let myLottoNumbers: [Int] = [1, 2, 3, 4, 5, 6]
 
     var randomLottoArray: [Int] = []
     
-    while randomLottoArray.count < 7 {
+    while randomLottoArray.count < 6 {
         
         let randomLottoNumbers = Int.random(in: 1...45)
         randomLottoArray.append(randomLottoNumbers)
