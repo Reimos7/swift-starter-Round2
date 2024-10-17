@@ -5,25 +5,25 @@
 //  Created by Reimos on 10/11/24.
 //
 
-
+var lottoDraws: [Int: Set<Int>] = [:]
+var randomLottoArray: Set<Int> = []
 
 func makeLottoDraw(_ choice: Int)  {
     
-    var lottoDictionary: [Int: [Int]] = [:]
-    var randomLottoArray: [Int] = []
-    
-    while randomLottoArray.count < 6 {
+    while randomLottoArray.count < 7 {
         let randomLottoNumbers = Int.random(in: 1...45)
-        randomLottoArray.append(randomLottoNumbers)
+        randomLottoArray.insert(randomLottoNumbers)
     }
     
-    for i in 1...5 {
-        lottoDictionary[i] = randomLottoArray
+    for i in 1...6 {
+        lottoDraws[i] = randomLottoArray
     }
     
-    guard let lottoDic = lottoDictionary[choice] else {return}
+    guard let lottoDic = lottoDraws[choice] else {
+        return
+    }
     
-    
-    print("\(choice)회차의 로또 당첨 번호는 \(lottoDic) 입니다.")
+    let lottoNumbers = lottoDic.sorted().map { String($0) }.joined(separator: ", ")
+        print("\(choice)회차의 로또 당첨 번호는 \(lottoNumbers) 입니다.")
     
 }

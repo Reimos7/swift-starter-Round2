@@ -6,20 +6,20 @@
 //
 
 func makeLottoNumber()  {
-    
-    let myLottoNumbers: [Int] = [1, 2, 3, 4, 5, 6]
+    let myLottoNumbers: Set<Int> = [1,2,3,4,5,6]
 
-    var randomLottoArray: [Int] = []
+    var randomLottoSet: Set<Int> = []
     
-    while randomLottoArray.count < 6 {
+    while randomLottoSet.count < 7 {
         
         let randomLottoNumbers = Int.random(in: 1...45)
-        randomLottoArray.append(randomLottoNumbers)
-        
+        randomLottoSet.insert(randomLottoNumbers)
+    
     }
     
-    if myLottoNumbers == randomLottoArray {
-        print("축하합니다! 겹치는 번호는 \(randomLottoArray) 입니다!")
+    
+    if myLottoNumbers == randomLottoSet {
+        print("축하합니다! 겹치는 번호는 \(randomLottoSet) 입니다!")
     } else {
         print("아쉽지만 겹치는 번호가 없습니다.")
     }

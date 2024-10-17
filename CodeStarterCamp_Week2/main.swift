@@ -8,5 +8,5 @@
 
 import Foundation
 
-//makeLottoNumber()
+makeLottoNumber()
 makeLottoDraw(3)
